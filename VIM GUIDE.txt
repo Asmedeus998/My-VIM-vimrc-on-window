@@ -1,0 +1,42 @@
+How do I save a file in other directory in vim?
+You must type the full path to the location where you want to save 
+the file with the write command. For instance, save file in :
+/Users/User/Documents/dev++ saved file/VIM
+
+Current Working Directory:
+:pwd
+
+Changing directory (cd command):
+:cd /Users/User/Documents/dev++ saved file/VIM
+
+change back to the previous working directory:
+:cd -
+
+Suppose you are currently in the /usr/local/share directory, 
+to switch to the /usr/local directory (one level up from the 
+current directory), you would type:
+:cd ../
+
+Listing directory contents:
+:ls
+
+display all files including the hidden files:
+:ls -a ~/
+
+opening file from current directory:
+:e filename3.c++
+
+paste from other browser or program:
+i 
+shift then insert
+
+tab example:
+gt
+
+move selection line up down:
+c-j = ctrl + down
+c-k = ctrl + up
+
+undo and redo:
+u = undo
+ctrl + r = redo

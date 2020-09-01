@@ -15,6 +15,7 @@ set guifont=*
 set backspace=indent,eol,start
 set clipboard=unnamed
 cd C:\Users\User\Documents\dev++ saved file\VIM
+nnoremap cpp :-1read C:\Users\User\Documents\dev++ saved file\VIM\template.cpp<CR> 
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprevious<CR>
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
@@ -139,3 +140,6 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
+
+noremap <c-k> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+noremap <c-j> ddp
