@@ -14,7 +14,7 @@ set ruler
 set guifont=*
 set backspace=indent,eol,start
 set clipboard=unnamed
-cd C:\Users\User\Documents\dev++ saved file\VIM
+cd C:\Users\User\Documents\dev++ saved file\VIM " Change to your save directory
 nnoremap cpp :-1read C:\Users\User\Documents\dev++ saved file\VIM\template.cpp<CR> 
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprevious<CR>
