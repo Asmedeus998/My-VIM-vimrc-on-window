@@ -14,10 +14,14 @@ set ruler
 set guifont=*
 set backspace=indent,eol,start
 set clipboard=unnamed
-cd C:\Users\User\Documents\dev++ saved file\VIM " Change to your save directory
+set rtp+=~/.fzf
+cd C:\Users\User\Documents\dev++ saved file\VIM\ "Change to your save directory
 nnoremap cpp :-1read C:\Users\User\Documents\dev++ saved file\VIM\template.cpp<CR> 
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-Left> :tabprevious<CR>
+noremap <c-k> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
+noremap <c-j> ddp
+nnoremap <silent> <Leader>f :Rg<CR>
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F10> :!%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
@@ -29,6 +33,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
+
 Plugin 'preservim/nerdcommenter'
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -57,7 +62,10 @@ Plugin 'phanviet/vim-monokai-pro'
 Plugin 'vim-airline/vim-airline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ajh17/VimCompletesMe'
+Plugin 'junegunn/fzf.vim'
+Plugin 'jakobkogler/Algorithm-DataStructures'
 " All of your Plugins must be added before the following line
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -140,6 +148,3 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
-
-noremap <c-k> :call feedkeys( line('.')==1 ? '' : 'ddkP' )<CR>
-noremap <c-j> ddp
